@@ -1,0 +1,5 @@
+/gitlab*
+/config/*
+!/config/root_password.txt.example
+!/config/gitlab.rb.example
+.env

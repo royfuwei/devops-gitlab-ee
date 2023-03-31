@@ -4,11 +4,33 @@ docker-compose gitlab
 ## Usage
 
 ```sh
+# .env 設定變數
+cp .env.example .env
+vim .env
+
+# gitlab.rb 設定檔
+cp ./config/gitlab.rb.example ./config/gitlab.rb
+vim ./config/gitlab.rb
+
+# root_password.txt gitlab root password
+cp ./config/root_password.txt.example ./config/root_password.txt
+vim ./config/root_password.txt
+
+
 mkdir gitlab
-mkdir gitlab-runner
+mkdir gitlab/config
+mkdir gitlab/data
+mkdir gitlab/log
+
+# mkdir gitlab-runner
+
+docker-compose up -d
 ```
 
 ```sh
+
+docker exec -it gitlab bash
+
 # 使用指令重新載入設定檔。
 gitlab-ctl reconfigure
 
